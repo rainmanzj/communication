@@ -9,7 +9,7 @@ namespace Cdo.Comon.Tool
 {
     public class BatchRequest
     {
-        protected void Button1_Click(byte[] buffer, string uploadFileName, int uploadFileSize)
+        protected void SendBuffer(byte[] buffer, string uploadFileName, int uploadFileSize)
         {
             Stream fileStream = null;
             try
@@ -51,7 +51,7 @@ namespace Cdo.Comon.Tool
                 }
             }
         }
-        public void TransferUpload(long iPkgIdx, List<long> PkgList, Stream fileStream, long Tranters, string uploadFileName, int uploadFileSize)
+        private void TransferUpload(long iPkgIdx, List<long> PkgList, Stream fileStream, long Tranters, string uploadFileName, int uploadFileSize)
         {
             WcfBatchRequest.UpLoadServiceClient ser = new WcfBatchRequest.UpLoadServiceClient();
             WcfBatchRequest.FileUploadMessage request = new WcfBatchRequest.FileUploadMessage();
