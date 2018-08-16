@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="0108514d-1153-4bdb-9867-e53c6e341449" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:1630/UpLoadService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="UpLoadService.xsd" MetadataType="Schema" ID="858bfdc5-6a32-4d3e-a66e-d643c137a60e" SourceId="1" SourceUrl="http://localhost:1630/UpLoadService.svc?xsd=xsd1" />
+    <MetadataFile FileName="UpLoadService.wsdl" MetadataType="Wsdl" ID="7b054d9f-f9ae-42b9-a1ca-d47416f08c00" SourceId="1" SourceUrl="http://localhost:1630/UpLoadService.svc?wsdl" />
+    <MetadataFile FileName="UpLoadService1.xsd" MetadataType="Schema" ID="06843692-0eb4-4959-a17d-796d00ab5a57" SourceId="1" SourceUrl="http://localhost:1630/UpLoadService.svc?xsd=xsd0" />
+    <MetadataFile FileName="UpLoadService2.xsd" MetadataType="Schema" ID="960dddc3-8f65-48a9-bd27-6bf553b37493" SourceId="1" SourceUrl="http://localhost:1630/UpLoadService.svc?xsd=xsd2" />
+    <MetadataFile FileName="UpLoadService.disco" MetadataType="Disco" ID="81454def-806f-4a6c-b491-e579dc90d3ad" SourceId="1" SourceUrl="http://localhost:1630/UpLoadService.svc?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

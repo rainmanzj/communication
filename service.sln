@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "HCUpLoad", "HCUpLoad", "{81F90D04-D1FA-4248-B577-E85B2D963A08}"
 EndProject
@@ -10,8 +10,6 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UploadWcfService", "UploadWcfService\UploadWcfService.csproj", "{F9F6CB9C-BDC6-40DD-AD07-DCD06C71FDA7}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UpLoadConsoleApplication", "UpLoadConsoleApplication\UpLoadConsoleApplication.csproj", "{45129B46-9BBF-4F5C-B653-6E9ADB74331A}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CDO.Comon.Tool", "Cdo.Comon.Tool\Cdo.Comon.Tool.csproj", "{6EDCFADD-9632-4414-82FB-3CBD8F3D05DC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -31,10 +29,6 @@ Global
 		{45129B46-9BBF-4F5C-B653-6E9ADB74331A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{45129B46-9BBF-4F5C-B653-6E9ADB74331A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{45129B46-9BBF-4F5C-B653-6E9ADB74331A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{6EDCFADD-9632-4414-82FB-3CBD8F3D05DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6EDCFADD-9632-4414-82FB-3CBD8F3D05DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6EDCFADD-9632-4414-82FB-3CBD8F3D05DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6EDCFADD-9632-4414-82FB-3CBD8F3D05DC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -43,6 +37,5 @@ Global
 		{2B23EDCC-D5B9-4D05-AB33-C3FD652AE800} = {81F90D04-D1FA-4248-B577-E85B2D963A08}
 		{F9F6CB9C-BDC6-40DD-AD07-DCD06C71FDA7} = {81F90D04-D1FA-4248-B577-E85B2D963A08}
 		{45129B46-9BBF-4F5C-B653-6E9ADB74331A} = {81F90D04-D1FA-4248-B577-E85B2D963A08}
-		{6EDCFADD-9632-4414-82FB-3CBD8F3D05DC} = {81F90D04-D1FA-4248-B577-E85B2D963A08}
 	EndGlobalSection
 EndGlobal
