@@ -9,7 +9,7 @@ namespace Cdo.Comon.Tool
 {
     public class BatchRequest
     {
-        protected void SendBuffer(byte[] buffer, string uploadFileName, int uploadFileSize)
+        public void SendBuffer(byte[] buffer, string uploadFileName, int uploadFileSize)
         {
             Stream fileStream = null;
             try
