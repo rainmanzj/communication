@@ -21,10 +21,18 @@ namespace UpLoadWebApplication
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            beginProgress();
+            //for (int i = 1; i <= 100; i++)
+            //{
+            //    setProgress(i);
 
+            //    //此处用线程休眠代替实际的操作，如加载数据等
+            //    System.Threading.Thread.Sleep(50);
+            //}
         }
 
         protected int progress = 0;
+        BatchRequest batchRequest = new BatchRequest();
         protected void Button1_Click(object sender, EventArgs e)
         {
             //UpLoadService.UpLoadServiceClient ser = new UpLoadService.UpLoadServiceClient();
@@ -32,12 +40,13 @@ namespace UpLoadWebApplication
             //ser.UploadFile(FileUpload1.PostedFile.FileName, "pppp", stream);
             //UpLoadService.FileUploadMessage request = new UpLoadService.FileUploadMessage();
             //Console.WriteLine(FileUpload1);
-            BatchRequest batchRequest = new BatchRequest();
+            if (batchRequest == null)
+                batchRequest = new BatchRequest();
             byte[] bytes = new byte[FileUpload1.FileContent.Length];
 
             FileUpload1.FileContent.Read(bytes, 0, bytes.Length);
-
-            batchRequest.SendBuffer(bytes, FileUpload1.FileName, 1024);
+            batchRequest.OnBatchRequestProcesEvent += batchRequest_BatchRequestProcesEvent;  
+            batchRequest.SendBuffer(bytes, FileUpload1.FileName, 1024000);
             //UploadArr(FileUpload1.FileContent, FileUpload1.FileName,1024);
             //request.FileName = FileUpload1.FileName;
             //request.SavePath = "ooooooo";
@@ -47,6 +56,38 @@ namespace UpLoadWebApplication
 
             //UpLoadService.IUpLoadService channel = ser.ChannelFactory.CreateChannel();
             //channel.UploadFile(request);
+        }
+
+        private void beginProgress()
+        {
+            //根据ProgressBar.htm显示进度条界面
+            string templateFileName = Path.Combine(Server.MapPath("."), "ProgressBar.htm");
+            StreamReader reader = new StreamReader(@templateFileName, System.Text.Encoding.GetEncoding("GB2312"));
+            string html = reader.ReadToEnd();
+            reader.Close();
+            Response.Write(html);
+            Response.Flush();
+        }
+        private void setProgress(int percent)
+        {
+            string jsBlock = "<script>SetPorgressBar('" + percent.ToString() + "'); </script>";
+            Response.Write(jsBlock);
+            Response.Flush();
+        }
+
+        private void finishProgress()
+        {
+            string jsBlock = "<script>SetCompleted();</script>";
+            Response.Write(jsBlock);
+            Response.Flush();
+        }
+        void batchRequest_BatchRequestProcesEvent(int proces)
+        {
+            this.procestip.Text = proces.ToString();
+            string jsBlock = "<script>SetPorgressBar('" + proces.ToString() + "'); </script>";
+            Response.Write(jsBlock);
+            Response.Flush();
+            
         }
         //public void TransferUpload(long iPkgIdx,List<long> PkgList, Stream fileStream, long Tranters, string uploadFileName,int uploadFileSize)
         //{

@@ -76,6 +76,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Default.aspx" />
+    <Content Include="ProgressBar.htm" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
