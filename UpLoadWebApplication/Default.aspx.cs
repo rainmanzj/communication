@@ -12,6 +12,7 @@ using System.Web.UI.WebControls.WebParts;
 using System.Xml.Linq;
 using System.IO;
 using System.Collections.Generic;
+using Cdo.Comon.Tool;
 
 
 namespace UpLoadWebApplication
@@ -31,7 +32,13 @@ namespace UpLoadWebApplication
             //ser.UploadFile(FileUpload1.PostedFile.FileName, "pppp", stream);
             //UpLoadService.FileUploadMessage request = new UpLoadService.FileUploadMessage();
             //Console.WriteLine(FileUpload1);
-            UploadArr(FileUpload1.FileContent, FileUpload1.FileName,1024);
+            BatchRequest batchRequest = new BatchRequest();
+            byte[] bytes = new byte[FileUpload1.FileContent.Length];
+
+            FileUpload1.FileContent.Read(bytes, 0, bytes.Length);
+
+            batchRequest.SendBuffer(bytes, FileUpload1.FileName, 1024);
+            //UploadArr(FileUpload1.FileContent, FileUpload1.FileName,1024);
             //request.FileName = FileUpload1.FileName;
             //request.SavePath = "ooooooo";
             //request.Tranter = 6;
