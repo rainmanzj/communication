@@ -33,6 +33,9 @@ namespace UpLoadWebApplication
             //UpLoadService.FileUploadMessage request = new UpLoadService.FileUploadMessage();
             //Console.WriteLine(FileUpload1);
             BatchRequest batchRequest = new BatchRequest();
+            string str = "sdsdsdsdsdsdffffffffffffsdsdsdsdsdsdffffffffffffsdsdsdsdsdsdffffffffffffsdsdsdsdsdsdffffffffffffsdsdsdsdsdsdffffffffffffsdsdsdsdsdsdffffffffffffsdsdsdsdsdsdffffffffffff";
+            byte[] bytes1 = new byte[str.Length * sizeof(char)];
+            System.Buffer.BlockCopy(str.ToCharArray(), 0, bytes1, 0, bytes1.Length);
             byte[] bytes = new byte[FileUpload1.FileContent.Length];
 
             FileUpload1.FileContent.Read(bytes, 0, bytes.Length);

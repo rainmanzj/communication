@@ -328,3 +328,5 @@ ASALocalRun/
 
 # MFractors (Xamarin productivity tool) working folder 
 .mfractor/
+UpLoadWebApplication/UpLoadWebApplication.csproj.rej
+UpLoadWebApplication/Web.config.rej
