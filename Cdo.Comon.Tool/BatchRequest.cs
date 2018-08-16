@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Cdo.Comon.Tool
 {
-    public class Class1
+    public class BatchRequest
     {
     }
 }
