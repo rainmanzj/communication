@@ -44,9 +44,12 @@ namespace UpLoadWebApplication
                 batchRequest = new BatchRequest();
             byte[] bytes = new byte[FileUpload1.FileContent.Length];
 
+            string Str1 = System.Text.Encoding.Default.GetString(FileUpload1.FileBytes);
+            byte[] byteArray = System.Text.Encoding.Default.GetBytes(Str1);
+
             FileUpload1.FileContent.Read(bytes, 0, bytes.Length);
             batchRequest.OnBatchRequestProcesEvent += batchRequest_BatchRequestProcesEvent;  
-            batchRequest.SendBuffer(bytes, FileUpload1.FileName, 1024000);
+            batchRequest.SendBuffer(byteArray, FileUpload1.FileName, 1024000);
             //UploadArr(FileUpload1.FileContent, FileUpload1.FileName,1024);
             //request.FileName = FileUpload1.FileName;
             //request.SavePath = "ooooooo";
