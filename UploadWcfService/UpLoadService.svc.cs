@@ -28,7 +28,15 @@ namespace UploadWcfService
             long tranter = request.Tranter;
             long tranters = request.Tranters;
             int length = request.length;
-            string fileNamePath = fileName.Substring(0, fileName.LastIndexOf("."));
+            string fileNamePath = "";
+            if (fileName.Contains("."))
+            {
+                fileNamePath = fileName.Substring(0, fileName.LastIndexOf("."));
+            }
+            else
+            {
+                fileNamePath = fileName;
+            }
             Stream sourceStream = request.FileData;
             FileStream targetStream = null;
            
@@ -46,8 +54,8 @@ namespace UploadWcfService
                 Directory.CreateDirectory(uploadFolder);
             }
 
-            string filePath = Path.Combine(uploadFolder, tranter + fileName);
-            using (targetStream = new FileStream(filePath, FileMode.Create, FileAccess.Write, FileShare.None))
+            string filePath = Path.Combine(uploadFolder, fileName);
+            using (targetStream = new FileStream(filePath, FileMode.Append, FileAccess.Write, FileShare.None))
             {
                 //targetStream.Write(Buffer, 0, length);
                 //read from the input stream in 4K chunks
@@ -64,7 +72,8 @@ namespace UploadWcfService
             }
             if(tranter == tranters)
             {
-                return new FileReturnMessage { IsOk = !IsOk, FileName = fileName, MsgData = "上传完成", Tranter = tranter, Tranters = tranters };
+                string Str1 = File.ReadAllText(filePath);
+                return new FileReturnMessage { IsOk = !IsOk, FileName = fileName, MsgData = Str1, Tranter = tranter, Tranters = tranters };
             }
             return new FileReturnMessage { IsOk = IsOk, FileName = fileName, MsgData = "上传成功", Tranter = tranter, Tranters = tranters };
         }
