@@ -1,15 +1,14 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="UpLoadWebApplication._Default" %>
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml" >
 <head runat="server">
     <title>无标题页</title>
-  <%--   <script type="text/javascript" language="javascript">
+     <script type="text/javascript" language="javascript">
          function SetPorgressBar(pos) {
              //设置进度条居中
-             var screenHeight = window["mainWindow"].offsetHeight;
-             var screenWidth = window["mainWindow"].offsetWidth;
+             var screenHeight = 1024;
+             var screenWidth = 800;
              ProgressBarSide.style.width = Math.round(screenWidth / 2);
              ProgressBarSide.style.left = Math.round(screenWidth / 4);
              ProgressBarSide.style.top = Math.round(screenHeight / 2);
@@ -25,7 +24,7 @@
          function SetCompleted() {
              ProgressBarSide.style.display = "none";
          }
-    </script>--%>  
+    </script>  
 </head>
 <body>
     <form id="form1" runat="server">
