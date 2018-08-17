@@ -7,11 +7,8 @@ using System.Threading.Tasks;
 
 namespace Cdo.Comon.Tool
 {
-    public delegate void BatchRequestEventHandler(int proces);
-
     public class BatchRequest
     {
-        public  event BatchRequestEventHandler OnBatchRequestProcesEvent=null;
         public void SendBuffer(byte[] buffer, string uploadFileName, int uploadFileSize)
         {
             Stream fileStream = null;
@@ -68,9 +65,6 @@ namespace Cdo.Comon.Tool
             request.length = uploadFileSize;
             request.FileData = new MemoryStream(buffer);
             WcfBatchRequest.FileReturnMessage data = channel.UploadFile(request);
-            int progress = (int)data.Tranter * 100 / (int)data.Tranters;
-            if (OnBatchRequestProcesEvent != null)
-                OnBatchRequestProcesEvent(progress);
             if (data.IsOk)
             {
                 TransferUpload(iPkgIdx + 1, PkgList, fileStream, Tranters, uploadFileName, uploadFileSize);
