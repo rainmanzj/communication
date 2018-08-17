@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" >
 <head runat="server">
     <title>无标题页</title>
-     <script type="text/javascript" language="javascript">
+  <%--   <script type="text/javascript" language="javascript">
          function SetPorgressBar(pos) {
              //设置进度条居中
              var screenHeight = window["mainWindow"].offsetHeight;
@@ -25,7 +25,7 @@
          function SetCompleted() {
              ProgressBarSide.style.display = "none";
          }
-    </script>  
+    </script>--%>  
 </head>
 <body>
     <form id="form1" runat="server">
@@ -38,12 +38,12 @@
           <asp:FileUpload ID="FileUpload1" runat="server" />
         <asp:Button ID="Button1" runat="server" onclick="Button1_Click" Text="upload" />
         
-        <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+   <%--     <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
         <asp:UpdatePanel ID="UpdatePanel1" runat="server"  UpdateMode="Conditional">
             <ContentTemplate>
                   当前进度：<asp:Label ID="procestip" runat="server" Text="0"></asp:Label>
 	        </ContentTemplate>
-        </asp:UpdatePanel>
+        </asp:UpdatePanel>--%>
 
         <!-- <asp:Label ID="Label1" runat="server" Text="Label" /> -->
     

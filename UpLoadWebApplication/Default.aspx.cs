@@ -83,7 +83,7 @@ namespace UpLoadWebApplication
         }
         void batchRequest_BatchRequestProcesEvent(int proces)
         {
-            this.procestip.Text = proces.ToString();
+            //this.procestip.Text = proces.ToString();
             string jsBlock = "<script>SetPorgressBar('" + proces.ToString() + "'); </script>";
             Response.Write(jsBlock);
             Response.Flush();
